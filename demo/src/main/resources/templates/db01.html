@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <table border="1">
+        <tr>
+        <th>ユーザID</th>
+        <th>ユーザ名</th>
+        <th>パスワード</th>
+        </tr>
+        <tr th:each="member: ${member}">
+        <td th:text="${member.id}"></td>
+        <td th:text="${member.name}"></td>
+        <td th:text="${member.password}"></td>
+        </tr>
+        </table>
+    </body>
+</html>
