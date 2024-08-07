@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>社員情報登録画面</title>
+</head>
+<body>
+	<header>
+			<p style="text-align: right;">〇〇　〇〇さん</p>
+				
+				<div style=" display: flex;">
+					<p>社員情報登録（確認）</p>
+					
+					<p style="position:absolute; right: 0;">
+						
+					<script>
+					var today=new Date(); 
+					var time= new Date();
+					
+					var year = today.getFullYear();
+					var month = today.getMonth()+1;
+					var day = today.getDate();
+					
+					var hour = time.getHours();
+					var minute = time.getMinutes();
+					var second = time.getSeconds();
+
+					document.write(year+"/"+month+"/"+day+"/　"+hour+"："+minute+"："+second);
+					</script>
+			        </p>
+				</div>
+		</header>
+	
+	<main>
+			社員名<span th:text="${syain}"><br>
+			年齢<span th:text="${age}"><br>
+			パスワード<span th:text="${pass}"><br>
+			パスワード確認<span th:text="${pass}"><br>
+
+			こちらで登録します。よろしいですか？<br>
+						
+			<input type="submit" value="確認">
+			<a href = "@{''}">戻る</a>
+		
+	</main>
+
+<footer>©︎javastudy group1  2024</footer>
+</body>
+</html>

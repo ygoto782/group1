@@ -6,20 +6,44 @@
 </head>
 <body>
 	<header>
-		<h1>トップメニュー</h1>
-	    <div th:text="${s}"></div>
+		<p style="text-align: right;">〇〇　〇〇さん</p>
+			
+			<div style=" display: flex;">
+				<p>トップメニュー</p>
+				
+				<p style="position:absolute; right: 0;">
+					
+				<script>
+				var today=new Date(); 
+				var time= new Date();
+				
+				var year = today.getFullYear();
+				var month = today.getMonth()+1;
+				var day = today.getDate();
+				
+				var hour = time.getHours();
+				var minute = time.getMinutes();
+				var second = time.getSeconds();
+
+				document.write(year+"/"+month+"/"+day+"/　"+hour+"："+minute+"："+second);
+				</script>
+		        </p>
+			</div>
 	</header>
 	
 	<main>
 		<div>
-			<a th:href = "@{''}">社員情報検索</a>
-			<a th:href = "@{''}">社員情報削除</a>
-			<a th:href = "@{''}">社員情報登録</a>
-			<a th:href = "@{''}">社員情報更新</a>
+			<a href = "@{''}">社員情報検索</a>
+			<a href = "@{''}">社員情報削除</a>
+			<a href = "@{''}">社員情報登録</a>
+			<a href = "@{''}">社員情報更新</a>
 		</div>
 		
 	</main>
 
-<footer>©︎javastudy group1  2024</footer>
+<footer>
+	<p class="fotter" style="text-align: right;">Copyright ©2024</p>
+</footer>
+
 </body>
 </html>
