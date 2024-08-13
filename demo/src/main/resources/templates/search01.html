@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+<meta charset="UTF-8">
+    <p style="text-align: right;">〇〇　〇〇さん</p>
+	
+	<div style=" display: flex;">
+		<p style="color: red;">社員情報検索 </p>
+        <p style="position:absolute; right: 0;">ログイン　yyyy/mm/dd 　h:ms</p>
+	</div>
+	
+    <title>社員情報検索</title>
+	<hr>
+</head>
+
+<ppbody>
+	<div>
+		<button class="menubtn" onclick="location.href='./'" value="メニュー">メニュー</button>
+		<button class="regbtn" onclick="location.href='./'" value="登録">登録</button>
+	</div>
+	
+	<form name="searchText"  style="text-align: center; ">
+		<p>社員ID<input type="number" name="ID" th:text="${taskdb.id}">年齢<input type="number" min="18" max="59" name ="age" th:text="${taskdb.age}" >～
+		   <input type="number"min="19" maxlength="70" name="ageafter"  th:text="${member.ageAfter}"></p>
+		   
+		<p>社員名<input type="text" name="name" th:text="${taskdb.name}">　開始日<input type="date" name="start" id="searchText" >～<input type="date" name="startafter" th:text="${taskdb.startAfter}"><br>
+			終了日<input type="date"name="finish" th:text="${taskdb.finish}">～<input type="date" name="finishafter" th:text="${taskdb.finishAfter}"></p>
+	
+		<p><button class="searchbtn">検索</button></p>
+		<p><button class="clearbtn" onclick="formReset()">クリア</button></p>
+		
+	</form>
+	<script>
+		function formReset(){
+			document.searchText,reset();
+			}
+	</script>
+	
+    <hr>
+	<p class="number" style="text-align: left;">〇〇件</p>
+	<button  class="lineclearbtn" style="position:absolute; right: 0;">削除</button>
+	<div th:swich="${taskdb} == null" value ="レコードがありません。"></div>
+		
+	<div class="result" style="text-align: center;">
+		<table border="1" style="border-collapse: collapse;" >
+			<tr>
+				<th><input type="checkbox" name="check" value=""></th>
+				<th>ID</th>
+				<th>氏名</th>
+				<th>年齢</th>
+				<th>開始日</th>
+				<th>終了日</th>
+			</tr>
+			
+			<tr>
+				<th th:each="member:${search}"><input type="checkbox" name="check" value=""></th>				
+				<td th:text="${taskdb.id}"></td>
+ 			    <td th:text="${taskdb.name}"></td>
+				<td th:text="${taskdb.age}"></td>
+				<td th:text="${taskdb.startday}"></td>
+				<td th:text="${taskdb.finishday}"></td>			
+		   </tr>
+		</table>
+	</div>
+
+</body>
+
+<footer>
+	<p class="fotter" style="text-align: right;">Copyright ©2024</p>
+</footer>
+
+</html>

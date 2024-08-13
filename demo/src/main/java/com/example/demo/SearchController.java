@@ -17,11 +17,13 @@ public class SearchController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @GetMapping("/index")
-    public String index(Model model) {
-        String sql = "SELECT * FROM test_sample1";
+    @GetMapping("/search01")
+    public String search(Model model) {
+        String sql = "SELECT * FROM taskdb";
         List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
-        model.addAttribute("testList", list);
-        return "index";
+        model.addAttribute("taskList", list);
+        return "search01";
     }
+    
+ 
 }
