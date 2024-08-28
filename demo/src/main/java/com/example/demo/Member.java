@@ -5,28 +5,20 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="search")
-public class Search {
+@Table(name="member")
+public class Member {
     @Id
     public int id;
-    public int age;
     public String name;
-    public int start;
-    public int finish;
+    public String password;
 
     void setId(int id){
         this.id = id;
     }
-    void setAge(int age) {
-    	this.age = age;
-    }
     void setName(String name){
         this.name = name;
     }
-    void setStart(int start){
-        this.start = start;
-    }
-    void setFinish(int finish) {
-    	this.finish =finish;
+    void setPassword(String password){
+        this.password = password;
     }
 }

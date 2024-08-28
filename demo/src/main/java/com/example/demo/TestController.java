@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping()
-public class SearchController {
+public class TestController {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
