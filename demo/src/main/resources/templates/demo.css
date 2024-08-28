@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.title{
+	font-size: large;
+	color: red;
+}
+
+main{
+	text-align: center;
+}
+
+#main{
+	border-bottom: solid black 1px;
+	border-top: solid 1px;
+}
+
+.main2{
+	font-weight: bold;
+	
+}
+
+label{
+	text-align: left;
+}
+
+
+footer{
+	text-align: end;
+}
