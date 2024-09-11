@@ -31,29 +31,20 @@
 			        </p>
 				</div>
 		</header>
-	
-	<main>
-		<div id="main">
-			<div class="main2">
-			社員名<span th:text="${syain}"><br>
-			年齢<span th:text="${age}"><br>
-			パスワード<span th:text="${pass}"><br>
-			パスワード確認<span th:text="${pass2}"><br>
-			</div>
-        
-			こちらで登録します。よろしいですか？<br>
-		</div>
-					
-		<form action="/finish" method="post">
-			<a href=""><input type="submit" value="登録"></a>
-			<a th:href = "@{finish}">戻る</a>
-		</form>
 		
 		
-			
-		
-	</main>
+    社員名<span name="syain" th:text="${syain}"></span><br>
+	年齢<span name="age" th:text="${age}"></span><br>
+    パスワード<span name="pass" th:text="${pass}"></span><br>
+    パスワード確認<span name="pass2" th:text="${pass2}"></span><br>
 
-<footer>©︎javastudy group1  2024</footer>
+	こちらで登録します。よろしいですか？<br>
+						
+	<form action="/finish" method="post">
+	<input type="submit" value="登録"></form>
+	
+	<form action="/send01" method="post">
+	<input type="submit" value="戻る"></form>
+	
 </body>
 </html>

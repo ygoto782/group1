@@ -31,40 +31,25 @@
 			        </p>
 				</div>
 		</header>
-	
-	<main>
-		
-	<div id="main">
-		
-		<div class="main2">	
-		<form action="/receive" method="post">
-			社員名＊<input type="text" name="syain"><br>
-			
-			年齢＊<input type="number" name="age"><br>
-			<span th:text="${message}"></span>
-			
-			パスワード＊<input type="password" name="pass"><br>
-			<span th:text="${message}"></span>
-			<span th:text="${message2}"></span>
-			
-			
-			パスワード確認＊<input type="password" name="pass2"><br>
-			<span th:text="${message}"></span>
-			<span th:text="${message2}"></span>
-			<span th:text="${message3}"></span>
-			
-		</div>
-		
-	    <div class="main3">
-		    <input type="submit" value="確認">
-		    <a th:href="@{menu}">戻る</a>
-	    </div>
-	
-	    </form>
-	</div>
-	
-	</main>
 
-<footer>©︎javastudy group1  2024</footer>
+		
+		<div name="message" th:text="${message}"></div><br>
+		<div name="message2" th:text="${message2}"></div><br>
+		<div name="message3" th:text="${message3}"></div><br>
+		<div name="message4" th:text="${message4}"></div><br>
+		
+		
+    <form action="/receive01" method="post">
+        社員名＊<input type="text" name="syain" th:text="${syain}"><br>
+		年齢＊<input type="number" name="age" th:text="${age}"><br>
+        パスワード＊<input type="password" name="pass" th:text="${pass}"><br>
+        パスワード確認＊<input type="password" name="pass2" th:text="${pass2}"><br>
+		
+        
+		
+        <input type="submit" value="確認">
+		<input type="submit" value="戻る">
+        
+    </form>
 </body>
 </html>
