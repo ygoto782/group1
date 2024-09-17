@@ -33,18 +33,21 @@
 		</header>
 		
 		
-    社員名<span name="syain" th:text="${syain}"></span><br>
-	年齢<span name="age" th:text="${age}"></span><br>
-    パスワード<span name="pass" th:text="${pass}"></span><br>
-    パスワード確認<span name="pass2" th:text="${pass2}"></span><br>
+	<form action="/send01" method="post">
+	<form action="/finish" method="post">
+		社員名＊<input type="text" name="syain" th:value=${syain}><br>
+		年齢＊<input type="number" name="age" th:value=${age}><br>
+        パスワード＊<input type="password" name="pass" th:value=${pass}><br>
+        パスワード確認＊<input type="password" name="pass2" th:value=${pass2}><br>
 
 	こちらで登録します。よろしいですか？<br>
-						
-	<form action="/finish" method="post">
-	<input type="submit" value="登録"></form>
 	
-	<form action="/send01" method="post">
-	<input type="submit" value="戻る"></form>
+	
+	<input type="submit" value="登録">
+	
+
+	<input type="submit" value="戻る">
+</form>
 	
 </body>
 </html>
