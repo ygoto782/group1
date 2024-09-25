@@ -90,12 +90,25 @@ public class Controller1 {
     
 	
 	
+	@RequestMapping("/delete")
+	public String delete()//(Model m)
+			//,@RequestParam("id")int id) 
+			{
+		//m.addAttribute("id", id);
+		
+		return "delete";
+	}
+	
 	
 	
 	@PostMapping("/delete2")
 	public String delete2(Model m) {
 		
 		Taskdb taskdb = new Taskdb();
+		taskdb.setId(1);
+		taskdb.setSyain("aaa");
+		taskdb.setAge("11");
+		taskdb.setPass("123456Aa");
 		
 		taskdbRepository.delete(taskdb);
 		

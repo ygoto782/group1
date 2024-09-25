@@ -15,8 +15,10 @@
 		<main>
 			<form>
 				社員ID<input type="text" value="1" readonly><br>
+				<!--  社員ID<input type="text" name="id" th:value=${} readonly><br>  -->
 			</form>
 			
+			<div>こちらを削除します。よろしいですか？</div>
 			
 			<form action="/delete2" method="post">
 			    <input type="submit" value="確認">
