@@ -33,7 +33,7 @@
 		</header>
 		
 		
-	<form action="/send01" method="post">
+	
 	<form action="/finish" method="post">
 		社員名＊<input type="text" name="syain" th:value=${syain}><br>
 		年齢＊<input type="number" name="age" th:value=${age}><br>
@@ -44,10 +44,15 @@
 	
 	
 	<input type="submit" value="登録">
+    </form>
 	
-
+	<form action="/send01" method="post">
+		<input type="text" name="syain" th:value=${syain} style="display:none;">
+		<input type="number" name="age" th:value=${age} style="display:none;">
+		<input type="password" name="pass" th:value=${pass} style="display:none;">
+		<input type="password" name="pass2" th:value=${pass2} style="display:none;">
 	<input type="submit" value="戻る">
-</form>
+    </form>
 	
 </body>
 </html>

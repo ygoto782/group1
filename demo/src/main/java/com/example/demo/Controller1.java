@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Controller1 {
-	//@Autowired
-	//private TaskdbRepository taskdbRepository;
+	
+	int num = 1;
 	
 	
-	String message = null;
-	String message2 = null;
-	String message3 = null;
-	String message4 = null;
-	
-	
+	@Autowired
+	private TaskdbRepository taskdbRepository;
 	
 	@GetMapping("/menu")
    public String menu(){
@@ -47,6 +44,8 @@ public class Controller1 {
                 m.addAttribute("age", age);
                 m.addAttribute("pass", pass);
                 m.addAttribute("pass2", pass2);
+                
+                
                 return "receive01";
     }
 	
@@ -70,40 +69,43 @@ public class Controller1 {
     
 	@PostMapping("/finish")
 	public String finish(
-	) {
+			Model m,
+			@RequestParam("syain")String syain,
+	        @RequestParam("age")String age,
+	        @RequestParam("pass")String pass
+			){
 		
+		Taskdb taskdb = new Taskdb();
+		taskdb.setId(num);
+		taskdb.setSyain(syain);
+		taskdb.setAge(age);
+		taskdb.setPass(pass);
 		
+		taskdbRepository.saveAndFlush(taskdb);
 		
-		//taskdbRepository.saveAndFlush(taskdb);
+		num++;
 		
 	return "finish";
     }
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-	String str = "Aa123456";
-	String str2 = "Aa123456";
-	String str3= null;
-	if((str.length() > 0) && (!str.matches("[0-9a-zA-Z]{8,}")) ) {
-		System.out.println(str);
-		 str3 = "あああ";
-		 System.out.println(str3);
-	}else {
-		System.out.println("aaa");
-	}
-	if(!str.matches(str2)) {
-		System.out.println(str2);
-	}else {
-		System.out.println("aaa");
-	}
-	
-	}
-	
-	
-	
     
+	
+	
+	
+	
+	@PostMapping("/delete2")
+	public String delete2(Model m) {
+		
+		Taskdb taskdb = new Taskdb();
+		
+		taskdbRepository.delete(taskdb);
+		
+		return "delete2";
+	}
+	
+	
+	
+	
+	
+	
+	
 }

@@ -14,10 +14,14 @@
 		
 		<main>
 			<form>
-				社員ID<input type="text"><br>
+				社員ID<input type="text" value="1" readonly><br>
 			</form>
 			
-			<a th:href = "@{''}">確認</a>
+			
+			<form action="/delete2" method="post">
+			    <input type="submit" value="確認">
+			</form>
+			
 			<a th:href = "@{''}">戻る</a>
 		</main>
 
