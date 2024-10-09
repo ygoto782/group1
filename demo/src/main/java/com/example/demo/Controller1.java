@@ -1,5 +1,7 @@
 package com.example.demo;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -91,7 +94,7 @@ public class Controller1 {
 	
 	
 	@RequestMapping("/delete")
-	public String delete()//(Model m)
+	public String delete()//(Model m
 			//,@RequestParam("id")int id) 
 			{
 		//m.addAttribute("id", id);
@@ -102,21 +105,30 @@ public class Controller1 {
 	
 	
 	@PostMapping("/delete2")
-	public String delete2(Model m) {
+	public String delete2(Model m,
+//			@RequestParam("id")int id,
+			@RequestParam("syain")String syain,
+	        @RequestParam("age")String age,
+	        @RequestParam("pass")String pass
+			){
+
 		
 		Taskdb taskdb = new Taskdb();
-		taskdb.setId(1);
-		taskdb.setSyain("aaa");
-		taskdb.setAge("11");
-		taskdb.setPass("123456Aa");
+//		taskdb.setId(id);
+		taskdb.setSyain(syain);
+		taskdb.setAge(age);
+		taskdb.setPass(pass);
 		
 		taskdbRepository.delete(taskdb);
 		
+
 		return "delete2";
 	}
 	
 	
-	
+//		List<Taskdb> taskdb = taskdbRepository.findById(1);
+		
+//		taskdbRepository.delete(taskdb);
 	
 	
 	
