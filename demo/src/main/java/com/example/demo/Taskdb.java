@@ -36,10 +36,11 @@ public class Taskdb{
 		return this.pass;
 	}
 
-	void setId(int id) {
-		this.id=id;
+	void setId(int num) {
+		this.id=num;
 	}
 	int getId() {
 		return this.id;
 	}
+	
 }
