@@ -2,6 +2,8 @@ package com.example.demo;
 
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -113,5 +115,36 @@ public class Controller1 {
         
 		return "delete2";
 	}
+	
+	
+	@RequestMapping("/db01")
+	public String db01(Model m) {
+		
+		Taskdb taskdb = null;
+		Optional<Taskdb> record = taskdbRepository.findById(1);
+        if(!record.isEmpty()) { taskdb = record.get();
+        
+        m.addAttribute("taskdb",taskdb);
+		
+		
+        
+		
+		
+		
+		
+		
+//		List<Taskdb>taskdb = taskdbRepository.findAll();
+//        m.addAttribute("taskdb",taskdb);
+        return "db01";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

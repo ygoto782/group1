@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		 <p style="text-align: right;">〇〇　〇〇さん</p>
+		 <div style=" display: flex;">
+			<p style="color: red;">社員情報検索 </p>
+		    <p style="position:absolute; right: 0;">ログイン　yyyy/mm/dd 　h:ms</p>
+		</div>
+    </head>
+
+    <body>
+		
+		<div>
+			<button class="menubtn" value="メニュー" ><a th:href="@{menu}">メニュー</a></button>
+			<button class="regbtn" value="登録"><a href="">登録</a></button>
+		</div>
+			
+		<form name="searchText"  style="text-align: center;">
+			社員ID<input type="number" min="0">
+			年齢<input type="number"id ="age" name="age" min="18" max="60">～<input type="number"id ="after_age" name="after_age" min="18" max="60"><br>
+			社員名<input type="text" id="syain">
+			開始日<input type="date" id="start" name="start">
+			～<input type="date" id="startafter" name="startafter"><br>
+			終了日<input type="date"id="finish" name="finish">
+			～<input type="date" id="finishafter" name="finishafter">
+			
+				<p><button class="searchbtn" id="searchbtn" onclick="return messageForm();">検索</button></p>
+				<p><button class="clearbtn" onclick="searchText_reset">クリア</button></p>
+			</form>
+			
+		    <hr>
+			<p class="number" style="text-align: left;">件</p>
+			<button  class="lineclearbtn" style="position:absolute; right: 0;"><a href="">削除</a></button>
+
+		
+        <table border="1">
+        <tr input type="checkbox" name="check" value="">
+        <th>社員ID</th>
+        <th>年齢</th>
+		<th>社員名</th>
+<!--		<th>開始日</th>
+		<th>終了日</th>-->
+ <!--       </tr>
+		
+        <tr th:if="${taskdb} != null">
+        <td th:text="${taskdb.id}"></td>
+        <td th:text="${taskdb.syain}"></td>
+		<td th:text="${taskdb.age}"></td>
+	<td th:text="${taskdb.startday}"></td>
+		<td th:text="${taskdb.finishday}"></td>-->
+        </tr>
+		
+<!--		<div th:if="${taskde} == null">
+			レコードがありません。
+		</div>	
+-->
+
+		<script>
+			function messageForm(){
+				if(document.searchText.age.value > document.searchText.after_age.value ){
+					alert("年齢の範囲が正しくありません。");
+					return false;
+				}else if(document.searchText.start.value > document.searchText.startafter.value || document.searchText.startafter.value > document.searchText.finish.value || document.searchText.finish.value >
+				    document.searchText.finishafter.value){
+					alert("開始日か終了日の範囲が正しくありません");
+					return false;
+					}
+			}
+			function searchText_reset(){
+				document.searchText.reset();
+			}
+		</script>
+
+        </table>
+    </body>
+</html>
